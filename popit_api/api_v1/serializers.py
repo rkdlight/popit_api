@@ -10,10 +10,10 @@ class UserDetailSerializer(serializers.ModelSerializer):
         exclude = ['reg_date', 'last_date']
 
 
-class ToyDetailSerializer(serializers.ModelSerializer):
+class ToyListSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Toy
-        fields = "__all__"
+        fields = ('id', 'name', 'image')
     
 
