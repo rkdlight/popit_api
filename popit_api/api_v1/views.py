@@ -36,11 +36,11 @@ class UserCreateView(generics.CreateAPIView):
 
 
 
-class ToyListView(generics.ListView):
+class ToyListView(generics.ListAPIView):
     queryset = Toy.objects.all()
     serializer_class = ToyListSerializer
 
-class UpdateListView(generics.ListView):
+class UpdateListView(generics.ListAPIView):
     queryset = Update.objects.all()
     serializer_class = UpdateListSerializer
 
