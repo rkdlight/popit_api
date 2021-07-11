@@ -59,6 +59,14 @@ class User(models.Model):
         ]
     '''
     buyed_toys = models.JSONField(verbose_name="Купленные игрушки", default=list)
+    '''
+        [
+            {"id": 1, "count":3, "current_price": 1.5},
+            {"id": 4, "count":3, "current_price": 11.5},
+            {"id": 5, "count":6, "current_price": 110.5},
+        ]
+    '''
+
 
     def __str__(self):
         return self.full_name
@@ -66,4 +74,13 @@ class User(models.Model):
     class Meta:
         verbose_name = "Пользователь"
         verbose_name_plural = "Пользователи"
+
+
+class Session(models.Model):
+
+    vk_id = models.IntegerField(verbose_name="VK ID", db_index=True, primary_key=True)
+    created = models.DateTimeField(auto_now_add=True)
+
+
+
 
