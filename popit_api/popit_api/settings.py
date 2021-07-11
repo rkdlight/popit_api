@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'rest_framework',
-    'api_v1.apps.ApiV1Config'
+    'api_v1',
+    
 ]
 
 MIDDLEWARE = [
@@ -82,13 +83,9 @@ WSGI_APPLICATION = 'popit_api.wsgi.application'
 
 DATABASES = {
     'default': {
-           'ENGINE': 'django.db.backends.postgresql_psycopg2',
-           'NAME': 'popit',
-           'USER': 'rkd',
-           'PASSWORD': 'light174',
-           'HOST':'127.0.0.1',
-           'PORT': '5432'
-       }
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'popit'
+    }
 }
 
 
@@ -138,4 +135,10 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+REST_FRAMEWORK = { 'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema' }
+
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+VENV_PATH = os.path.dirname(BASE_DIR)
+STATIC_ROOT = os.path.join(VENV_PATH, 'static_root')
 

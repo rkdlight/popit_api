@@ -2,11 +2,9 @@ from django.db import models
 from django.contrib.postgres.fields import *
 from datetime import date
 
-from django.db.models.fields.related import ForeignKey
-
 # Create your models here.
 class Toy(models.Model):
-
+    
     name = models.CharField(max_length=128, verbose_name="Название")
     image = models.FileField(verbose_name="Изображение",blank=True)
     base_price = models.FloatField(verbose_name="Цена", default=0)
@@ -49,7 +47,7 @@ class User(models.Model):
     coins_by_click = models.FloatField(verbose_name="Монет/клик", default=0.001)
     reg_date = models.DateTimeField(auto_now_add=True, verbose_name="Дата регистрации")
     last_date = models.DateTimeField(auto_now=True, verbose_name="Дата последней активности")
-    refer = ForeignKey('User', on_delete=models.SET_NULL, null=True, blank=True, related_name='referals')
+    refer = models.ForeignKey('User', on_delete=models.SET_NULL, null=True, blank=True, related_name='referals')
     buyed_updates = models.JSONField(verbose_name="Купленные улучшения", default=list)
     '''
         [

@@ -41,7 +41,7 @@ class VKUserPermission(BasePermission):
         else:
             try:
                 session = Session.objects.get(pk=int(request.data['vk_id']))
-                if datetime.now(timezone.utc) -  session.created >= timedelta(seconds=self.life_time):
+                if datetime.now(timezone.utc) - session.created >= timedelta(seconds=self.life_time):
                     return False
                 else:
                     return True
