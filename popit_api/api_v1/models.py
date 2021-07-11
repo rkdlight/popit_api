@@ -11,6 +11,7 @@ class Toy(models.Model):
     coins_by_click = models.FloatField(verbose_name="Монет/клик")
     pop_count = models.IntegerField(verbose_name="Количество пупырок")
     flipings_before_ad = models.IntegerField(verbose_name="Количество переворачиваний до рекламы")
+    referals_need = models.IntegerField(verbose_name="Необходимо рефералов", default=0)
 
     def __str__(self):
         return self.name
