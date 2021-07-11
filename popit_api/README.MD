@@ -155,5 +155,6 @@
         "base_price" = float
         "image" = str #url of image
         "coins_by_click" = float
+        "referals_need" = int
     }
 
