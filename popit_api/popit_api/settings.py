@@ -83,8 +83,12 @@ WSGI_APPLICATION = 'popit_api.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'popit'
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'popit',
+        'USER': 'root',
+        'PASSWORD': 'light174',
+        'HOST': 'db',
+        'PORT': '3306',
     }
 }
 
