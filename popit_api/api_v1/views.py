@@ -13,7 +13,7 @@ from .serializers import *
 
 
 class VKUserPermission(BasePermission):
-    SECRET_KEY = "wvl68m4dR1UpLrVRli"
+    SECRET_KEY = "ClSBgHcpMM0tTPDZVi68"
     life_time = 60*30
     def has_permission(self, request, view):
 
